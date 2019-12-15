@@ -1,18 +1,19 @@
 package hpose.com
 
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main2.*
 import kotlinx.android.synthetic.main.content_main2.*
 import org.jetbrains.anko.longToast
+
 
 class Main2Activity : AppCompatActivity() {
     val MY_PERMISSIONS_REQUEST_CAMERA = null
@@ -91,15 +92,20 @@ class Main2Activity : AppCompatActivity() {
         val roj = intent.getStringExtra("et2")
         lbl2.text = roj
         lbl2.setBackgroundResource(R.color.coloret2)
-        var intent2 = Intent()
-        var num1 = intent2.getStringExtra("num1")
-        var num2 = intent2.getStringExtra("num2")
-        var resul = Integer.parseInt(num1) + Integer.parseInt(num2)
-        num1r.text = num1.toString()
-        num2r.text = num2.toString()
 
-
+        val num1 = intent.getIntExtra("num1",0)
+        val num2 = intent.getIntExtra("num2",0)
+        val resul = num1 + num2
+        num1t.text = num1.toString()
+        num2t.text = num2.toString()
         resultado.text = resul.toString()
+
+        resultadoSuma.setOnClickListener {
+            val resultInt = Intent()
+            resultInt.putExtra("result", resul)
+            setResult(Activity.RESULT_OK, resultInt)
+            finish()
+        }
     }
 
 

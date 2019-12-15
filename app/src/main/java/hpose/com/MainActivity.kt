@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import org.jetbrains.anko.design.snackbar
 import org.jetbrains.anko.longToast
+import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity() {
     val RESULTADO_SUMA = 23
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Abriendo web", Snackbar.LENGTH_LONG)
@@ -50,8 +52,8 @@ class MainActivity : AppCompatActivity() {
 
         btnSuma.setOnClickListener {
             val intent2 = Intent(this, Main2Activity::class.java)
-            intent2.putExtra("num1", num1r.text)
-            intent2.putExtra("num2", num2r.text)
+            intent2.putExtra("num1", Integer.parseInt(num1r.text.toString()))
+            intent2.putExtra("num2", Integer.parseInt(num2r.text.toString()))
             startActivityForResult(intent2, RESULTADO_SUMA)
         }
     }
@@ -78,13 +80,17 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == RESULTADO_SUMA) {
+        if ((num1r.text.toString().equals("")) || (num2r.text.toString().equals(""))) {
+            toast("Introduce algún numero")
+        } else {
+            if (requestCode == RESULTADO_SUMA) {
 
-            if (resultCode == Activity.RESULT_OK) {
-                val result = data?.getIntExtra("result", 0)
-                texto.text = R.string.resultado.toString()
+                if (resultCode == Activity.RESULT_OK) {
+                    val result = data?.getIntExtra("result", 0)
+                    texto.text = result.toString()
 
 
+                }
             }
         }
     }

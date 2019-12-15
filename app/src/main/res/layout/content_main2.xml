@@ -56,24 +56,24 @@
         app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
-        android:id="@+id/num1r"
+        android:id="@+id/num1t"
         android:layout_width="77dp"
         android:layout_height="22dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="56dp"
-        android:text="@string/num1r"
+        android:text="@string/num1t"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lbl1" />
 
     <TextView
-        android:id="@+id/num2r"
+        android:id="@+id/num2t"
         android:layout_width="85dp"
         android:layout_height="27dp"
         android:layout_marginTop="56dp"
-        android:text="@string/num2r"
+        android:layout_marginEnd="32dp"
+        android:text="@string/num2t"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.759"
-        app:layout_constraintStart_toEndOf="@+id/num1r"
         app:layout_constraintTop_toBottomOf="@+id/lbl1" />
 
     <TextView
@@ -85,5 +85,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lbl2" />
+
+    <Button
+        android:id="@+id/resultadoSuma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resultadoSuma"
+        app:layout_constraintBottom_toTopOf="@+id/lbl2"
+        app:layout_constraintEnd_toStartOf="@+id/num2t"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toEndOf="@+id/num1t"
+        app:layout_constraintTop_toBottomOf="@+id/lbl1"
+        app:layout_constraintVertical_bias="0.617"
+        tools:text="Suma" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

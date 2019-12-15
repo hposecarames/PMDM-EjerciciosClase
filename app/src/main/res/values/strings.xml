@@ -12,4 +12,9 @@
     <string name="num2r" />
     <string name="num1r" />
     <string name="resultado">\@string</string>
+    <string name="suma">suma</string>
+    <string name="intentbtn">Intentbtn</string>
+    <string name="num1t">num1t</string>
+    <string name="num2t">num2t</string>
+    <string name="resultadoSuma">Button</string>
 </resources>

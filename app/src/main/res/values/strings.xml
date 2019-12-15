@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">AppBotones</string>
+    <string name="action_settings">Settings</string>
+    <string name="btnClick">Click</string>
+    <string name="btnFondo">Fondo</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="btnIntent" />
+    <string name="lbl1">TextView</string>
+    <string name="lbl2">TextView</string>
+    <string name="Camara">Camara</string>
+    <string name="foto">TODO</string>
+    <string name="num2r" />
+    <string name="num1r" />
+    <string name="resultado">\@string</string>
+</resources>
